@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Crash the bones</string>
+    <string name="play_time"> You won for: %d seconds</string>
+</resources>
