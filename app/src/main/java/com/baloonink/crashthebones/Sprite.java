@@ -11,8 +11,6 @@ import lombok.Data;
 public class Sprite {
     private int x = 0;
     private int y = 0;
-    private int screen_x = 0;
-    private int screen_y = 0;
     private int x_speed;
     private int y_speed;
     private Bitmap bitmap;

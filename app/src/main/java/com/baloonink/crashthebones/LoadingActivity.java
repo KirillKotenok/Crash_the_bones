@@ -13,38 +13,27 @@ import java.util.TimerTask;
 
 public class LoadingActivity extends AppCompatActivity {
 
-    private boolean isActive = true;
+    TimerTask timerTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loading);
-        ImageView loading = findViewById(R.id.loading);
-        Glide.with(this).load(R.drawable.loading).into(loading);
-        load();
-    }
 
-    private void load() {
-        new Timer().schedule(new TimerTask() {
+        timerTask = new TimerTask() {
             @Override
             public void run() {
-                if (isActive) {
-                    startActivity(new Intent(LoadingActivity.this, MainActivity.class));
-                }
+                startActivity(new Intent(LoadingActivity.this, MainActivity.class));
                 finish();
             }
-        }, 5000);
+        };
+
+        new Timer().schedule(timerTask, 3000);
     }
 
     @Override
     protected void onPause() {
-        isActive = false;
         super.onPause();
-    }
-
-    @Override
-    protected void onResume() {
-        isActive = true;
-        super.onResume();
+        timerTask.cancel();
     }
 }

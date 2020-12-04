@@ -35,7 +35,7 @@ public class EndActivity extends AppCompatActivity implements View.OnClickListen
             textView.setText("You killed the hero and that`s why you lost!");
         } else {
             play_time = intent.getDoubleExtra(mainActivity.TIME_KEY, 0.0)/1000;
-            textView.setText("You won for:" + play_time + "seconds"/*String.format(getString(R.string.play_time), play_time)*/);
+            textView.setText("You won for:" + play_time + "seconds");
         }
         textView.setTextColor(Color.WHITE);
     }

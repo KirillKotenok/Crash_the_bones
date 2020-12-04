@@ -43,7 +43,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         paint = new Paint();
         spriteFactory = new SpriteFactory();
         sprite = new Sprite(this, scale_bitmap(R.drawable.skeleton));
-        skeleton_list = spriteFactory.getAnotherSprite(sprite, 2);
+        skeleton_list = spriteFactory.getAnotherSprite(sprite, 100);
         sprite = new Sprite(this, scale_bitmap(R.drawable.knight));
         sprite.setX_speed(28);
         sprite.setY_speed(28);
